@@ -1,6 +1,6 @@
 #version 330 core
 
-in vec4 v_realPosition;
+in vec3 v_realPosition;
 in vec3 v_normal;
 
 uniform struct lighting {

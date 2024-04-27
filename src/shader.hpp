@@ -25,6 +25,9 @@ public:
 
         program = compileProgram(vert, frag);
 
+        delete vertData;
+        delete fragData;
+
         glDeleteShader(vert);
         glDeleteShader(frag);
     }
@@ -76,7 +79,7 @@ public:
 
         if (!success) {
             glGetShaderInfoLog(ptr, 512, nullptr, infoLog);
-            std::cout << "Shader compilation failed " << (type == GL_VERTEX_SHADER ? "vertex" : "fragment") << std::endl << infoLog << std::endl;
+            std::cout << "Shader compilation failed " << (type == GL_VERTEX_SHADER ? "vertex" : "fragment") << std::endl << infoLog << std::endl << std::endl;
             return 0;
         }
 
